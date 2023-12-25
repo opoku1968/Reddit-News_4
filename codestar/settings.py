@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','python-orange-fish-kofi34254136069.codeanyapp.com','port-3000-python-orange-fish-kofi34254136069.preview.codeanywhere.com','port-8000-python-orange-fish-kofi34254136069.preview.codeanywhere.com','port-8000-python-orange-fish-kofi34254136069.preview.codeanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1','reddit-news-4.herokuapp.com','python-orange-fish-kofi34254136069.codeanyapp.com','port-3000-python-orange-fish-kofi34254136069.preview.codeanywhere.com','port-8000-python-orange-fish-kofi34254136069.preview.codeanywhere.com','port-8000-python-orange-fish-kofi34254136069.preview.codeanywhere.com', 'localhost']
     
 
 # Application definition
