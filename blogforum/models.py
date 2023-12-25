@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 
 # Default User model
@@ -10,7 +10,8 @@ from django.contrib.auth.models import User
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    profile_pic = CloudinaryField('profile_pic', default="v1701982014/lruym3fucw2jsqtj8smo.jpg", null=True, blank=True)
+    # profile_pic = CloudinaryField('profile_pic', default="v1701982014/lruym3fucw2jsqtj8smo.jpg", null=True, blank=True)
+    profile_pic = models.ImageField('profile_pic', default="v1701982014/lruym3fucw2jsqtj8smo.jpg", null=True, blank=True)
     is_doctor = models.BooleanField(default=False)
 
     def __str__(self):

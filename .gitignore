@@ -1,0 +1,9 @@
+core.Microsoft*
+core.mongo*
+core.python*
+env.py import os.environ["DATABASE_URL"]="<postgres://xwjzoqzy:4-GgVZbilaS4ohrRwgTfxhRqBdsZCMZd@flora.db.elephantsql.com/xwjzoqzy>" 
+__pycache__/
+*.py[cod]
+node_modules/
+.github/
+cloudinary_python.txt
