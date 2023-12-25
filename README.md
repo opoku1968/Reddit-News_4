@@ -1,187 +1,65 @@
 # Reddit News Blog
 
-![image of Reddit News Blog](Redditnewsblog.png)
+![image of Reddit News Blog](documentation/Images/Reddit_news.png)
+
+Portfolio 4 project as part of the Diploma in Full Stack Software Development by Code Institute.
+___
 
 A web application that allows users to view and interact with news content in a Reddit-like format. Built with Python, HTML, CSS, and Django.
 
-# Contents
+It is a fullstack blog site that allows users to read blog posts, create an account and comment on the posts.
+
+<!-- Link to live site - [https://md82p4blog.herokuapp.com/](https://md82p4blog.herokuapp.com/) -->
+
+## CONTENTS
 
 - [Reddit News Blog](#reddit-news-blog)
-- [Contents](#contents)
-- [Introduction](#introduction)
-  - [Why Reddit News?](#why-reddit-news)
-- [Project](#project)
-- [Aim of the Blog](#aim-of-the-blog)
-  - [1. Community-Driven News Sharing](#1-community-driven-news-sharing)
-  - [2. User Engagement and Interaction](#2-user-engagement-and-interaction)
-  - [3. Subreddit Organization](#3-subreddit-organization)
-  - [4. Responsive Design](#4-responsive-design)
-  - [5. User Authentication and Personalization](#5-user-authentication-and-personalization)
-  - [6. Voting System](#6-voting-system)
+  - [CONTENTS](#contents)
+  - [Site Objectives](#site-objectives)
+- [User Experience/UX](#user-experienceux)
+  - [Target Audience](#target-audience)
+  - [User Stories](#user-stories)
+    - [New Visitor Goals](#new-visitor-goals)
+    - [Existing Visitor Goals](#existing-visitor-goals)
+- [Design Choices](#design-choices)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Logo and Favicon](#logo-and-favicon)
+  - [Wireframes](#wireframes)
+  - [Flow Diagram](#flow-diagram)
+  - [Database Plan](#database-plan)
 - [Features](#features)
-  - [1. User Authentication](#1-user-authentication)
-  - [2. Subreddit Selection](#2-subreddit-selection)
-  - [3. News Feed](#3-news-feed)
-  - [4. Post Interaction](#4-post-interaction)
-  - [5. Search Functionality](#5-search-functionality)
-  - [6. Responsive Design](#6-responsive-design)
-  - [7. Trending Topics](#7-trending-topics)
-  - [8. Dark Mode](#8-dark-mode)
-  - [9. User Profile](#9-user-profile)
-  - [10. Notifications](#10-notifications)
-  - [11. Moderation Tools](#11-moderation-tools)
-  - [12. External Links Handling](#12-external-links-handling)
-  - [13. Continuous Updates](#13-continuous-updates)
-- [User Goals](#user-goals)
-  - [1. Discover Relevant and Engaging Content](#1-discover-relevant-and-engaging-content)
-  - [2. Participate in Community Discussions](#2-participate-in-community-discussions)
-  - [3. Customize and Personalize User Experience](#3-customize-and-personalize-user-experience)
-  - [4. Explore Niche Interests through Subreddits](#4-explore-niche-interests-through-subreddits)
-  - [5. Stay Updated with Breaking News](#5-stay-updated-with-breaking-news)
-  - [6. Seamless Cross-Device Experience](#6-seamless-cross-device-experience)
-  - [7. Contribute to Content Curation](#7-contribute-to-content-curation)
-- [Site Owner Goals](#site-owner-goals)
-  - [1. Foster a Positive and Inclusive Community](#1-foster-a-positive-and-inclusive-community)
-  - [2. Encourage User Engagement and Retention](#2-encourage-user-engagement-and-retention)
-  - [3. Ensure Platform Security and Stability](#3-ensure-platform-security-and-stability)
-  - [4. Monetization and Sustainability](#4-monetization-and-sustainability)
-  - [5. Analyze User Behavior and Feedback](#5-analyze-user-behavior-and-feedback)
-  - [6. Scalability and Performance Optimization](#6-scalability-and-performance-optimization)
-  - [7. Legal and Ethical Compliance](#7-legal-and-ethical-compliance)
-  - [8. Community Growth and Diversity](#8-community-growth-and-diversity)
-- [Development](#development)
-  - [Technologies Used](#technologies-used)
-  - [Project Structure](#project-structure)
-  - [Setup and Installation](#setup-and-installation)
+  - [Registration](#registration)
+  - [Future Features](#future-features)
+  - [Features Not Included](#features-not-included)
+- [Technologies Used](#technologies-used)
+- [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
+- [Agile](#agile)
 - [Testing](#testing)
-  - [1. Unit Testing](#1-unit-testing)
-  - [2. Integration Testing](#2-integration-testing)
-  - [3. User Acceptance Testing (UAT)](#3-user-acceptance-testing-uat)
-  - [4. Cross-Browser Compatibility Testing](#4-cross-browser-compatibility-testing)
-  - [5. Responsiveness Testing](#5-responsiveness-testing)
-  - [6. Performance Testing](#6-performance-testing)
-  - [7. Security Testing](#7-security-testing)
-  - [8. Accessibility Testing](#8-accessibility-testing)
-  - [9. Continuous Testing](#9-continuous-testing)
-  - [10. Regression Testing](#10-regression-testing)
-- [Credits](#credits)
-  - [Content and Development](#content-and-development)
-  - [Acknowledgments](#acknowledgments)
-  - [Testing](#testing-1)
+  - [Manual Testing](#manual-testing)
+  - [User](#user)
+  - [Bugs](#bugs)
+  - [Lighthouse](#lighthouse)
+  - [Validation Testing](#validation-testing)
+    - [HTML \& CSS](#html--css)
+  - [Python Testing](#python-testing)
+  - [Deployment](#deployment)
+    - [Github Deployment](#github-deployment)
+    - [Creating a Fork or Copying](#creating-a-fork-or-copying)
+    - [Clone](#clone)
+    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+    - [Deployment of the app](#deployment-of-the-app)
+  - [Credits](#credits)
   - [Media](#media)
-  - [Inspiration](#inspiration)
+  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
-# Introduction
+___
 
-Welcome to the Reddit News Web App, a dynamic and engaging platform for discovering, sharing, and discussing the latest news and topics. This web application is built with Python, HTML, CSS, and Django, providing users with a familiar Reddit-like experience.
+## Site Objectives
 
-Whether you're a news enthusiast, a curious reader, or someone looking to share your thoughts, this app is designed to cater to your needs. With features like user authentication, post creation, voting systems, and organized subreddits, you can immerse yourself in a vibrant community of news consumers and contributors.
+Design and create a blog site to demonstrate an increasing understanding of the libraries and frameworks available to developers.
 
-## Why Reddit News?
-
-- **Stay Informed**: Access a wide range of news and topics conveniently categorized into various subreddits.
-- **Engage in Discussions**: Share your opinions, ask questions, and participate in meaningful discussions with other users.
-- **User-Friendly Interface**: Enjoy a seamless and responsive design that adapts to different devices for a comfortable browsing experience.
-
-Ready to dive in? Explore the installation instructions below and start your journey with the Reddit News Web App.
-
-![Reddit News](Redditnewsblog.png)
-
-# Project
-
-# Aim of the Blog
-
-The primary goal of the Reddit News Web App is to create an inclusive and interactive platform that fosters the exchange of information, diverse perspectives, and community-driven discussions. The blog aims to provide users with the following key features:
-
-## 1. Community-Driven News Sharing
-
-Enable users to share and discover news articles, stories, and topics that matter to them. The community-driven aspect ensures a broad spectrum of content, ranging from breaking news to niche interests.
-
-## 2. User Engagement and Interaction
-
-Encourage active user participation through comments, upvotes, and downvotes. Users can engage in insightful conversations, express their opinions, and contribute to the overall discourse.
-
-## 3. Subreddit Organization
-
-Implement a subreddit system where users can explore specific areas of interest. Each subreddit serves as a dedicated space for discussions related to a particular theme, enhancing content organization and user experience.
-
-## 4. Responsive Design
-
-Create a user-friendly and responsive design to ensure a seamless experience across various devices. The web app aims to be accessible and visually appealing, adapting to different screen sizes and orientations.
-
-## 5. User Authentication and Personalization
-
-Implement user authentication to allow individuals to create accounts, personalize their profiles, and keep track of their interactions. This feature enhances the sense of community and ownership.
-
-## 6. Voting System
-
-Incorporate a voting system that enables users to express their preferences on posts and comments. This democratic approach helps surface the most relevant and popular content.
-
-By aligning these features, the Reddit News Web App strives to become a go-to platform for news consumption, community engagement, and meaningful discussions in an online setting.
-
-
-# Features
-
-## 1. User Authentication
-
-The Reddit News Web App provides a secure and personalized experience through user authentication. Users can create accounts, log in, and stay logged in across sessions, ensuring a seamless interaction with the application.
-![image of Reddit News Blog](error.png)
-## 2. Subreddit Selection
-
-Users can choose their favorite subreddits to customize their news feed. The application supports a wide range of subreddits, allowing users to stay informed about topics that interest them the most.
-
-## 3. News Feed
-
-The heart of the application, the news feed displays the latest and most popular posts from the selected subreddits. Users can scroll through posts, view images, and read article previews without leaving the application.
-
-## 4. Post Interaction
-
-Users can engage with posts by upvoting, downvoting, and commenting. The application dynamically updates post scores and comment sections, providing a real-time and interactive environment for users to participate in discussions.
-
-## 5. Search Functionality
-
-A powerful search feature enables users to find specific posts, subreddits, or user profiles. The search functionality includes auto-suggestions, making it easy for users to discover content relevant to their interests.
-
-## 6. Responsive Design
-
-The Reddit News Web App is built with a responsive design, ensuring optimal user experience across various devices, including desktops, tablets, and smartphones.
-
-## 7. Trending Topics
-
-Stay informed about trending topics with the application's trending section. This feature highlights the most discussed and popular posts across all selected subreddits.
-
-## 8. Dark Mode
-
-Enhance user experience with a dark mode option. Users can toggle between light and dark modes based on their preferences, reducing eye strain during nighttime browsing.
-
-## 9. User Profile
-
-Each user has a customizable profile where they can view their posts, comments, and upvoted content. The profile section provides a summary of the user's activity within the application.
-
-## 10. Notifications
-
-Receive real-time notifications for upvoted posts, new comments on user-generated content, and other relevant updates. The notification system keeps users engaged and informed.
-
-## 11. Moderation Tools
-
-For subreddit moderators, the application offers moderation tools to manage and monitor user-generated content. This includes the ability to remove posts, ban users, and enforce subreddit rules.
-
-## 12. External Links Handling
-
-The application gracefully handles external links, allowing users to open articles, images, or websites associated with posts directly within the app.
-
-## 13. Continuous Updates
-
-The Reddit News Web App is committed to regular updates, introducing new features, improvements, and security enhancements to provide users with the best possible experience.
-
-Feel free to customize and expand upon these features based on the functionalities your Reddit News Web App offers. This section serves as a comprehensive overview of the key aspects that make your application unique and user-friendly.
-
-
-
-
-# User Goals
-
-The Reddit News Web App is designed with the following user-centric goals in mind, aiming to provide a comprehensive and enjoyable experience for every user:
+My  objectives were:
 
 ## 1. Discover Relevant and Engaging Content
 
@@ -213,156 +91,340 @@ The Reddit News Web App is designed with the following user-centric goals in min
 
 By focusing on these user goals, the Reddit News Web App aims to provide an inclusive, informative, and enjoyable platform for individuals seeking a diverse and engaging online community.
 
-# Site Owner Goals
+<!-- - ### Store data on an external cloud database
 
-The development and maintenance of the Reddit News Web App are driven by several overarching goals aimed at ensuring the success and sustainability of the platform. These goals encompass both the technical and strategic aspects of managing an online community and content-sharing platform.
+  I used ElephantSQL to store the PostgreSQL database for this project. -->
 
-## 1. Foster a Positive and Inclusive Community
+___
 
-**Objective:** Cultivate a positive and inclusive environment where users feel respected and valued. Implement moderation tools and community guidelines to maintain a healthy discourse and prevent abusive behavior.
+# User Experience/UX
 
-## 2. Encourage User Engagement and Retention
+## Target Audience
 
-**Objective:** Drive user engagement by regularly updating content, promoting discussions, and introducing features that enhance the overall user experience. Retention strategies focus on providing value to users to encourage prolonged participation.
+- Users interested in seeking interactive discussions who are familiar with platforms like Reddit, also users desiring customizable news feeds, journalists and content creators 
 
-## 3. Ensure Platform Security and Stability
+## User Stories
 
-**Objective:** Prioritize the security and stability of the platform to protect user data and maintain a reliable service. Regularly update and patch software, employ secure coding practices, and implement measures to prevent and address security vulnerabilities.
+### New Visitor Goals
 
-## 4. Monetization and Sustainability
+- To understand what the site and content is about.
+- How to navigate the site.
+- Create an account and engage with the site and other users and site owner.
 
-**Objective:** Develop sustainable monetization strategies that align with the user experience. This may include advertising, premium features, or partnerships. Ensure financial stability while maintaining a commitment to user satisfaction.
+### Existing Visitor Goals
 
-## 5. Analyze User Behavior and Feedback
+- Log in and out of their account.
+- Read blog posts and comments on each post.
+- Add their own comments on blog posts on the site to engage with site owner and other users.
 
-**Objective:** Leverage analytics tools to gather insights into user behavior, preferences, and trends. Act on user feedback to continually improve the platform, introduce new features, and address any pain points or concerns.
+___
 
-## 6. Scalability and Performance Optimization
+# Design Choices
 
-**Objective:** Design the platform with scalability in mind to accommodate growing user bases. Continuously optimize performance to ensure a seamless experience, particularly during periods of high user activity.
+## Colour Scheme
 
-## 7. Legal and Ethical Compliance
+The colour scheme used for this project was based on the colors from Code Institute's 'I think therefore I blog' walkthrough module. I have added and modified many aspects of the styling and colours to suit my intentions. It is a fairly neutral scheme, with only the actionable aspects (buttons/links etc) displayed in brighter colours for ease of navigation or site use.
 
-**Objective:** Adhere to legal and ethical standards related to user data privacy, content moderation, and online community management. Regularly review and update policies to align with evolving regulatory landscapes.
+## Typography
 
-## 8. Community Growth and Diversity
+The main font used is Nunito Sans, but MavenPro was used for the texts on the header
 
-**Objective:** Actively promote community growth by attracting users from diverse backgrounds and interests. Encourage the creation of new subreddits and facilitate initiatives that contribute to a rich and varied community.
+## Logo and Favicon
 
-By aligning with these site owner goals, the Reddit News Web App aims to establish itself as a trustworthy, engaging, and sustainable platform for both users and the site owner.
+The Logo is just a simple text using MavenPro as the font
+
+## Wireframes
+
+- Mobile Homepage Wireframe
+
+![Mobile Homepage Wireframe](/documentation/wireframes/mobile_homepage_wireframe.png)
+
+- Mobile Post Detail Wireframe
+
+![Mobile Post Detail Wireframe](documentation/wireframes/mobile_post_detail_wireframe.png)
+
+- Desktop Homepage Wireframe
+
+![Desktop Homepage Wireframe](documentation/wireframes/desktop_homepage_wireframe.png)
+
+- Desktop Post Detail Wireframe
+
+![Desktop Post Detail Wireframe](documentation/wireframes/desktop_postdetail_wireframe.png)
+
+## Flow Diagram
+
+Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
+
+![Site Flow Diagram](documentation/Images/site_flow_diagram.png)
+
+## Database Plan
+
+The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
+
+![Database plan](documentation/Images/database_plan.png)
+
+# Features
+
+## Registration
+
+The user can Sign up
 
 
-# Development
+![Create an Account](documentation/Images/Signup.png)
 
-## Technologies Used
+## View Blog Posts on Home Page
 
-The Reddit News Web App is built using a combination of front-end and back-end technologies to deliver a seamless and feature-rich user experience. The following technologies were employed in the development process:
+![View on Home Page](documentation/Images/Homepage.png)
 
-- **Front-end:**
-  - HTML5: Structure and presentation of web pages.
-  - CSS3: Styling and layout design to enhance user interface aesthetics.
-  - JavaScript: Client-side scripting for interactive elements and dynamic content.
+## Browse by Post Category
 
-- **Back-end:**
-  - Django: A high-level Python web framework that provides a robust foundation for building web applications, including features like ORM (Object-Relational Mapping), routing, and authentication.
-  - Python: The primary programming language for server-side logic and application functionality.
-  - SQLite: A lightweight relational database used during development for data storage.
+![Browse by Post Category](documentation/Images/Categories.png)
 
-- **Version Control:**
-  - Git: Used for version control, allowing for efficient collaboration and tracking changes throughout the development process.
-  - GitHub: Hosts the project repository and facilitates collaborative development and issue tracking.
+## Comment on Blog Posts.
 
-- **Deployment:**
-  - Heroku: The chosen platform for deploying and hosting the live application, ensuring accessibility to users.
+*Also shown here is the trashcan which allows users to upvote or downvote*
 
-## Project Structure
+![Comment on Blog Posts](documentation/Images/comment.png)
 
-The project follows a structured organization to maintain clarity and facilitate ease of development. The key directories include:
 
-- **`/templates`:** Contains HTML templates used to render dynamic content and structure pages.
-- **`/static`:** Houses static assets such as stylesheets, images, and JavaScript files.
-- **`/src`:** Holds the main source code for the Django application, including models, views, and configuration settings.
+## Subreddit Selection
+Users can choose their favorite subreddits to customize their news feed. The application supports a wide range of subreddits, allowing users to stay informed about topics that interest them the most.
 
-## Setup and Installation
+## News Feed
 
-To set up the development environment locally, follow these steps:
+The heart of the application, the news feed displays the latest and most popular posts from the selected subreddits. Users can scroll through posts, view Images, and read article previews without leaving the application.
 
-1. Clone the repository from GitHub:
 
-   ```bash
-   git clone https://github.com/opoku1968/reddit-news2-main.git
+## Search Functionality
 
+A powerful search feature enables users to find specific posts, subreddits, or user profiles. The search functionality includes auto-suggestions, making it easy for users to discover content relevant to their interests.
+
+## Responsive Design
+
+The Reddit News Web App is built with a responsive design, ensuring optimal user experience across various devices, including desktops, tablets, and smartphones.
+
+## Trending Topics
+
+Stay informed about trending topics with the application's trending section. This feature highlights the most discussed and popular posts across all selected subreddits.
+
+## Dark Mode
+
+Enhance user experience with a dark mode option. Users can toggle between light and dark modes based on their preferences, reducing eye strain during nighttime browsing.
+
+## User Profile
+
+Each user has a customizable profile where they can view their posts, comments, and upvoted content. The profile section provides a summary of the user's activity within the application.
+
+## Notifications
+
+Receive real-time notifications for upvoted posts, new comments on user-generated content, and other relevant updates. The notification system keeps users engaged and informed.
+
+## Moderation Tools
+
+For subreddit moderators, the application offers moderation tools to manage and monitor user-generated content. This includes the ability to remove posts, ban users, and enforce subreddit rules.
+
+## External Links Handling
+
+The application gracefully handles external links, allowing users to open articles, Images, or websites associated with posts directly within the app.
+
+
+## Future Features
+
+- Add an option for users to edit comments
+- Add profile page for users to add profile image and edit personal details
+
+## Features Not Included
+
+- Add an option for users to upload photos into the comments
+
+___
+
+# Technologies Used
+
+These are the technologies used in building this project:
+
+- [Github](https://github.com) To host and store the data for the site.
+- [CodeAnywhere](https://codeanywhere.com/) To create and build this project
+- [CodeAnywhere](https://www.codeanywhere.com) the IDE where the site was built.
+- [PEP8 Validator](https://pep8ci.herokuapp.com/) Used to check python code for errors
+- [ElephandSQL](https://www.elephantsql.com/) Used to store PostgreSQL database.
+- [Cloudinary](https://cloudinary.com/) Used as cloud storage for Images uploaded as part of the blog posts
+- [Heroku](https://id.heroku.com/) Used to deploy the project
+
+# Programming Languages, Frameworks and Libraries Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+# Agile
+
+This project was designed using Agile methodology, utilising the Project Board and Issues sections in GitHub
+
+<!-- - [Project Board](https://github.com/users/markdaniel1982/projects/4/views/1) -->
 
 # Testing
 
-## 1. Unit Testing
+As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling.
 
-The Reddit News Web App is subjected to comprehensive unit testing to validate the functionality of individual components, functions, and modules. Unit tests are designed to ensure that each part of the application performs as expected, contributing to the overall reliability of the system.
+## Manual Testing
 
-## 2. Integration Testing
+## User
 
-Integration tests are conducted to assess the interactions between different modules and components of the Reddit News Web App. This testing phase focuses on identifying any issues that may arise from the collaboration of integrated elements, ensuring seamless data flow and communication.
+| TEST | OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Create Account | Created successfully | Pass |
+| Login | Login Successful | Pass |
+| Logout | Logout Successful | Pass |
+| Read Full Blog Post | PostDetail page loaded successfully | Pass |
+| Add Comment under Blogpost | Comment Added Successfully | Pass |
+| Upvote Comment | Comment Upvoted | Pass |
+| Downvote Comment | Comment Downvoted | Pass |
+| Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
 
-## 3. User Acceptance Testing (UAT)
 
-User Acceptance Testing is a critical phase where the application is evaluated by actual users to verify its usability and alignment with user expectations. This testing stage involves real-world scenarios to validate that the Reddit News Web App meets the needs and preferences of its intended audience.
+(*) See Bugs below
 
-## 4. Cross-Browser Compatibility Testing
+## Bugs
 
-To guarantee a consistent user experience across various web browsers, the Reddit News Web App undergoes rigorous cross-browser compatibility testing. This process ensures that users can access and interact with the application seamlessly, regardless of their chosen browser.
 
-## 5. Responsiveness Testing
+At different points throughout this project, I encountered various bugs involving the styling. These usually appeared after adding a new section or template page. These were all fixed using Bootstrap classes or custom CSS to override any issues caused by Bootstrap itself.
 
-The application's responsiveness is thoroughly tested to confirm its adaptability to different screen sizes and devices. From desktop monitors to smartphones and tablets, the Reddit News Web App aims to deliver a visually appealing and user-friendly experience on any platform.
+Towards the end of completion, I had an issue with the database, where I had made a change to the Post Model, but hadn't migrated the changes after undoing the changes in the code relating to that change. This required me to reset the database, which was done with help from Rebecca via the Code Institute's Tutor Support. The changes related to the Category Model and the choices available when creating an account.
 
-## 6. Performance Testing
+To enable me to reset the database, I first had to comment out the code (related to "choices" in the model) to stop the code being run and causing an error. Once this was done, the database was reset, seemingly without issue.
 
-Performance testing is conducted to evaluate the speed, responsiveness, and overall efficiency of the Reddit News Web App. This includes assessing loading times, response times for user actions, and the application's ability to handle concurrent user interactions.
+Then I had a problem with the "Create a Post" page. When adding a new blog post via the browser, the Images were not being sent to cloudinary for cloud storage, and the ElephantSQL cloud database was also not recieving any data. This was a very simple fix as I needed to add ```enctype="multipart/form-data"``` into the form element.
 
-## 7. Security Testing
+## Lighthouse
 
-Security testing is a priority to identify and address potential vulnerabilities in the Reddit News Web App. This includes testing for common security threats such as SQL injection, cross-site scripting (XSS), and data breaches. The application's data encryption and user authentication mechanisms are also thoroughly examined.
+Using Lighthouse these were the scores obtained
 
-## 8. Accessibility Testing
+Mobile
 
-The Reddit News Web App is committed to accessibility standards, ensuring that all users, including those with disabilities, can navigate and interact with the application. Accessibility testing validates that the app complies with relevant accessibility guidelines and provides an inclusive user experience.
+![Lighthouse Mobile Score](documentation/Images/lighthouse_mobile.png)
 
-## 9. Continuous Testing
+Desktop
 
-The development team implements continuous testing practices, integrating automated testing tools into the development workflow. This approach facilitates early detection of issues, streamlines the debugging process, and maintains the overall health of the Reddit News Web App.
+![Lighthouse Desktop Score](documentation/Images/score.png)
 
-## 10. Regression Testing
+## Validation Testing
 
-Any updates or modifications to the application trigger regression testing to confirm that new changes do not introduce unexpected issues or disrupt existing functionalities. This iterative testing process safeguards the stability of the Reddit News Web App throughout its lifecycle.
+### HTML & CSS
 
-The combination of these testing methodologies ensures a robust and reliable Reddit News Web App, providing users with a seamless and secure platform for accessing and engaging with Reddit news content.
+HTML & CSS testing was done using [W3 Validator](https://validator.w3.org/)
 
-# Credits
+When validating the code, There were no errors found as shown below
 
-## Content and Development
+![HTML Validation - Descendant Error](documentation/Images/html%20checking.png)
 
-- **Author:** [Prince]
-- **GitHub Repository:** [opoku1968/reddit-news2-main]
 
-## Acknowledgments
+## Python Testing
 
-- **Code Institute:** The Reddit News Web App project was developed as part of the Python and Django coursework at Code Institute, providing valuable learning resources and guidance.
-- **Reddit API:** The application utilizes the Reddit API to fetch and display news content. Special thanks to Reddit for providing this API, enabling the integration of real-time Reddit news data into the app.
-- **Django Framework:** The Reddit News Web App is built on the Django web framework, leveraging its powerful features for web development. Thanks to the Django community for creating and maintaining this framework.
-- **HTML, CSS, and JavaScript:** The project incorporates standard web technologies for front-end development. Gratitude to the communities behind these technologies for their continuous improvement and support.
-- **Bootstrap Framework:** The application's front-end design benefits from the Bootstrap framework. Thanks to the Bootstrap team for creating a responsive and customizable framework.
-- **FontAwesome:** Icons used in the Reddit News Web App are provided by FontAwesome, enhancing the visual appeal of the user interface.
+Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
-## Testing
+The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
 
-- Special thanks to all beta testers and users who provided feedback during the testing phase. Your insights and suggestions contributed to enhancing the overall user experience.
+Python Files Tested:
+
+- models
+- forms
+- views
+- urls
+
+___
+
+## Deployment
+
+### Github Deployment
+
+The website was stored using GitHub for storage of data and version control. To do this I did the following;
+
+After each addition, change or removal of code, in the terminal within your IDE (I used codeanywhere for this project) type:
+
+- git add .
+- git commit -m "meaningful commit message"
+- git push
+
+The files are now available to view within your github repository.
+
+### Creating a Fork or Copying
+
+To clone/fork/copy the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
+
+### Clone
+
+To create a clone you do the following;
+
+1. Click on the code tab, left of the Gitpod tab
+2. To the right of the repository name, click the clipboard icon
+3. In the IED open GitBash
+4. Change the working directory to the location you prefer
+5. Add Git Clone with the copy of the repository name
+6. Clone has been created
+
+### Repository deployment via Heroku
+
+- On the [Heroku Dashboard](https://dashboard.heroku.com) page, click New and then select Create New App from the drop-down menu.
+- When the next page loads insert the App name and Choose a region. Then click 'Create app'
+- In the settings tab click on Reveal Config Vars and add the key Port and the value 8000. The credentials for this app were:
+
+1. Cloudinary URL
+2. Postgres Database URL
+3. Port (8000)
+
+- Below this click Add buildpack and choose python and nodejs in that order.
+
+### Deployment of the app
+
+- Click on the Deploy tab and select Github-Connect to Github.
+- Enter the repository name and click Search.
+- Choose the repository that holds the correct files and click Connect.
+- A choice is offered between manual or automatic deployment whereby the app is updated when changes are pushed to GitHub.
+- Once the deployment method has been chosen the app will be built and can be launched by clicking the Open app button which should appear below the build information window, alternatively, there is another button located in the top right of the page.
+
+___
+
+## Credits
+
+This project was based on the Code Institute's - I think therefore I blog walkthrough module which provided a standard blog 'base'. From this base I customised a lot of the layout and styling with Bootstrap and custom CSS. I also added a custom model for Category. This allowed me to create a functionality within the site for users to filter the blog posts by a selected category.
+
+I also added several custom Views and Forms to the site, as well as ensuring that all links and desired functionality was working as intended with no errors.
+
+For inspiration and fine-tuning of my code, I referred to John Elder's youtube channel [Codemy](https://www.youtube.com/@Codemycom) where I was able to get a better understanding of how to correctly create this type of product using Django and Bootstrap.
+
+The Readme layout was based on the example by [Kera Cudmore - Readme Examples](https://github.com/kera-cudmore/readme-examples/blob/main/README.md?plain=1) and [Sdalsosa - Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
+
+The wireframe mockups were created using [Figma](https://https://www.figma.com/)
+
+Once complete, the readme file was passed through a spelling and grammar check via [Grammarly](https://www.grammarly.com/)
+
+___
 
 ## Media
 
-- The images and visual elements used in the project are either created by the author or obtained from royalty-free sources. Proper attribution and licensing have been ensured for all media assets.
+For placeholder Images when no image is uploaded to blog post, I have used [picsum](https://picsum.photos/) which provides a library of stock Images that display as a placeholder.
 
-## Inspiration
+All other content and Images are my own.
 
-- The concept and inspiration for the Reddit News Web App originated from the desire to create a user-friendly platform for accessing Reddit news content. Thanks to the broader developer community for inspiring innovative projects and solutions.
+___
 
-If you have any inquiries or suggestions regarding the Reddit News Web App, feel free to contact the author through the GitHub repository or associated channels.
+## Acknowledgments and Thanks
+
+Sean & Oisin at Code Institute's tutor support for the help and guidance with my code-related brain melts.
+
+Rebecca at Code Institute's tutor support for the database reset guidance.
+
+John Elder on the [Codemy](https://www.youtube.com/@Codemycom) youtube channel
+
+For help with manual testing:
+
+- Liz Mayhew
+- Tom Mayhew
+- Nush
+- Marie Daniel
+- Hannah Cook
+- Thomas Spåre
+- Shubham Sinha
