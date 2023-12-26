@@ -9,7 +9,7 @@ A web application that allows users to view and interact with news content in a 
 
 It is a fullstack blog site that allows users to read blog posts, create an account and comment on the posts.
 
-<!-- Link to live site - [https://md82p4blog.herokuapp.com/](https://md82p4blog.herokuapp.com/) -->
+Link to live site - [https://new-reddit-b6200d755aad.herokuapp.com/](https://new-reddit-b6200d755aad.herokuapp.com/)
 
 ## CONTENTS
 
@@ -91,9 +91,9 @@ My  objectives were:
 
 By focusing on these user goals, the Reddit News Web App aims to provide an inclusive, informative, and enjoyable platform for individuals seeking a diverse and engaging online community.
 
-<!-- - ### Store data on an external cloud database
+- ### Store data on an external cloud database
 
-  I used ElephantSQL to store the PostgreSQL database for this project. -->
+  I used ElephantSQL to store the PostgreSQL database for this project.
 
 ___
 
@@ -137,25 +137,18 @@ The Logo is just a simple text using MavenPro as the font
 
 - Mobile Homepage Wireframe
 
-![Mobile Homepage Wireframe](/documentation/wireframes/mobile_homepage_wireframe.png)
+![Desktop Wireframe 1](/documentation/Images/wireframe1.png)
 
 - Mobile Post Detail Wireframe
 
-![Mobile Post Detail Wireframe](documentation/wireframes/mobile_post_detail_wireframe.png)
+![Desktop Wireframe 2](/documentation/Images/wireframe2.png)
 
-- Desktop Homepage Wireframe
-
-![Desktop Homepage Wireframe](documentation/wireframes/desktop_homepage_wireframe.png)
-
-- Desktop Post Detail Wireframe
-
-![Desktop Post Detail Wireframe](documentation/wireframes/desktop_postdetail_wireframe.png)
 
 ## Flow Diagram
 
 Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
 
-![Site Flow Diagram](documentation/Images/site_flow_diagram.png)
+![Site Flow Diagram](documentation/Images/flow%20chart.png)
 
 ## Database Plan
 
